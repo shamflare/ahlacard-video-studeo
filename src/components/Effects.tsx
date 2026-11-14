@@ -106,9 +106,9 @@ export const FilmFinish: React.FC = () => {
 };
 
 /** Light bloom + anamorphic streak on every scene cut. */
-export const CutFlashes: React.FC = () => {
+export const CutFlashes: React.FC<{cuts?: number[]}> = ({cuts: all = CUTS}) => {
   const f = useCurrentFrame();
-  const cuts = CUTS.slice(1, -1);
+  const cuts = all.slice(1, -1);
   let a = 0;
   let streak = 0;
   let sx = 0;
