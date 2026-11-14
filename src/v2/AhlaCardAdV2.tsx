@@ -25,7 +25,7 @@ const BrandBug: React.FC = () => {
   );
 };
 
-export const AhlaCardAdV2: React.FC = () => (
+export const AhlaCardAdV2: React.FC<{audio?: string}> = ({audio = 'audio/music-v2.wav'}) => (
   <AbsoluteFill style={{backgroundColor: '#050507'}}>
     <Background />
     <Particles count={50} />
@@ -45,6 +45,6 @@ export const AhlaCardAdV2: React.FC = () => (
     <BrandBug />
     <CutFlashes cuts={CUTS_V2} />
     <FilmFinish />
-    <Audio src={staticFile('audio/music-v2.wav')} />
+    <Audio src={staticFile(audio)} />
   </AbsoluteFill>
 );
