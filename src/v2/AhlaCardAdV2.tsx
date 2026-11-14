@@ -5,6 +5,7 @@ import {Background, CutFlashes, FilmFinish, Particles} from '../components/Effec
 import {Logo} from '../components/Props';
 import {SceneShell} from '../components/SceneShell';
 import {OVERLAP} from '../theme';
+import {Mascot} from './Mascot';
 import {BillsV2, CtaV2, GamesV2, HookV2, MobileV2, OrdersV2, ValueV2} from './ScenesV2';
 
 // Scene cuts (frames @30fps) — synced with `make_music.py ... v2`
@@ -25,7 +26,7 @@ const BrandBug: React.FC = () => {
   );
 };
 
-export const AhlaCardAdV2: React.FC<{audio?: string}> = ({audio = 'audio/music-v2.wav'}) => (
+export const AhlaCardAdV2: React.FC<{audio?: string; mascot?: boolean}> = ({audio = 'audio/music-v2.wav', mascot = false}) => (
   <AbsoluteFill style={{backgroundColor: '#050507'}}>
     <Background />
     <Particles count={50} />
@@ -43,6 +44,11 @@ export const AhlaCardAdV2: React.FC<{audio?: string}> = ({audio = 'audio/music-v
       );
     })}
     <BrandBug />
+    {mascot ? (
+      <div style={{position: 'absolute', left: 24, top: 1500}}>
+        <Mascot size={300} />
+      </div>
+    ) : null}
     <CutFlashes cuts={CUTS_V2} />
     <FilmFinish />
     <Audio src={staticFile(audio)} />

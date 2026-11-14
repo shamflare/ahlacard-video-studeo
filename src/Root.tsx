@@ -9,6 +9,15 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="AhlaCardAd" component={AhlaCardAd} durationInFrames={DURATION} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="AhlaCardAdV2" component={AhlaCardAdV2} durationInFrames={DURATION} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition
+      id="AhlaCardAdV2Mascot"
+      component={AhlaCardAdV2}
+      defaultProps={{audio: 'audio/mix-v2-vo-mona.wav', mascot: true}}
+      durationInFrames={DURATION}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
+    <Composition
       id="AhlaCardAdV2VO"
       component={AhlaCardAdV2}
       defaultProps={{audio: 'audio/mix-v2-vo.wav'}}
